@@ -4,9 +4,9 @@ public class Questao3 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("digite um numero: ");
-        double a = sc.nextInt();
+        double a = sc.nextDouble();
         System.out.println("digite mais um numero: ");
-        double b = sc.nextInt();
+        double b = sc.nextDouble();
 
         System.out.println("soma: "+ (a + b));
         System.out.println("subtração: "+ (a - b));
