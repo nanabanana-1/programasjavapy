@@ -1,26 +1,37 @@
 import java.util.ArrayList;
 import java.util.List;
-class Responsavel extends Pessoa{
+class Responsavel extends Pessoa {
 
-    public List<Alunos> alunos;
+    private List<Alunos> alunos;
 
     public Responsavel(String nome, String telefone, String cpf) {
         super(nome, telefone, cpf);
         this.alunos = new ArrayList<>();
     }
 
-    @Override
-    public String Saudacao(){
+
+    public List<Alunos> getAlunos() {
+        return alunos;
+    }
+
+    public void addAluno(Alunos aluno) {
+        this.alunos.add(aluno);
+    }
+    
+    public String Saudacao() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.cpf).append("oi, eu sou ").append(this.nome).append("   | meu telefone eh: ").append(this.telefone).append("  | e meu cpf eh: ").append(this.cpf);
+        sb.append("Oi, eu sou ").append(getNome()).append(" | meu telefone eh: ").append(getTelefone()).append(" | meu cpf eh: ").append(getCpf());
         if (!alunos.isEmpty()) {
             sb.append(" | sou responsavel pelos alunos: ");
             for (Alunos a : alunos) {
-                sb.append(a.nome).append(" (").append(a.cpf).append("), ");
+                sb.append(a.getNome()).append(" (").append(a.getCpf()).append("), ");
             }
-            // Remover a última vírgula e espaço
             sb.setLength(sb.length() - 2);
         }
         return sb.toString();
+    }
+
+    public void setAlunos(List<Alunos> alunos) {
+        this.alunos = alunos;
     }
 }

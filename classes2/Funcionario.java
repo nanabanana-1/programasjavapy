@@ -1,6 +1,6 @@
-class Funcionario extends Pessoa {
-    public String cod;
-    public String funcao;
+public class Funcionario extends Pessoa {
+    private String cod;
+    private String funcao;
 
     public Funcionario(String nome, String telefone, String cpf, String cod, String funcao) {
         super(nome, telefone, cpf);
@@ -8,7 +8,21 @@ class Funcionario extends Pessoa {
         this.funcao = funcao;
     }
 
-    String temFuncao(){
-        return "sou funcionario, minha funcao eh:" + this.funcao;
+    
+    public String getCod() {
+        return cod;
+    }
+
+    public String getFuncao() {
+        return funcao;
+    }
+
+   
+    public void setCod(String cod) {
+        this.cod = cod;
+    }
+
+    public void setFuncao(String funcao) {
+        this.funcao = funcao;
     }
 }

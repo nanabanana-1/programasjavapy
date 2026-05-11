@@ -1,6 +1,6 @@
-class Alunos extends Pessoa{
-    public String mtr1;
-    public String curso;
+public class Alunos extends Pessoa {
+    private String mtr1;
+    private String curso;
 
     public Alunos(String mtr1, String nome, String telefone, String cpf, String curso) {
         super(nome, telefone, cpf);
@@ -8,7 +8,19 @@ class Alunos extends Pessoa{
         this.curso = curso;
     }
 
-    public String aprende(){
-        return "o aluno eh:" + this.nome + "   | seu telefone eh: " + this.telefone +  "  | sua matricula " + this.mtr1 + "| ele aprende: " + this.curso;
+    public String getMtr1() {
+        return mtr1;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setMtr1(String mtr1) {
+        this.mtr1 = mtr1;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 }
