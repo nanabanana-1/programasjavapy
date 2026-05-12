@@ -13,4 +13,9 @@ class Professor extends Alunos {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
+    @Override
+    public String Saudacao() {
+        return "Bem-vindo, professor!";
+    }
 }

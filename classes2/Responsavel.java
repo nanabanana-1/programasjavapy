@@ -34,4 +34,9 @@ class Responsavel extends Pessoa {
     public void setAlunos(List<Alunos> alunos) {
         this.alunos = alunos;
     }
+
+    @Override
+    public String Saudacao() {
+        return "Bem-vindo, responsável!";
+    }
 }

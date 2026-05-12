@@ -18,6 +18,7 @@ public class Main {
 
             Pessoa pessoa = criarPessoa(scanner, nome, telefone, cpf, cargo);
             if (pessoa != null) {
+                System.out.println("\n" + pessoa.Saudacao());
                 System.out.println(pessoa.comprimentar(pessoa));
             } else {
                 System.out.println("Cargo invalido.");
@@ -28,35 +29,37 @@ public class Main {
     private static Pessoa criarPessoa(Scanner scanner, String nome, String telefone, String cpf, String cargo) {
         switch (cargo.toLowerCase()) {
             case "a" -> {
+                Alunos aluno = new Alunos("", nome, telefone, cpf, "");
+                System.out.println("\n" + aluno.Saudacao());
                 System.out.println("digite a matricula: ");
-                String mtr1 = scanner.nextLine();
+                aluno.setMtr1(scanner.nextLine());
                 System.out.println("digite o curso: ");
-                String curso = scanner.nextLine();
-                Alunos aluno = new Alunos(mtr1, nome, telefone, cpf, curso);
-                System.out.println(aluno.comprimentar(aluno));
+                aluno.setCurso(scanner.nextLine());
+                return aluno;
             }
             case "f" -> {
+                Funcionario funcionario = new Funcionario(nome, telefone, cpf, "", "");
+                System.out.println("\n" + funcionario.Saudacao());
                 System.out.println("digite o codigo: ");
-                String cod = scanner.nextLine();
+                funcionario.setCod(scanner.nextLine());
                 System.out.println("digite a funcao: ");
-                String funcao = scanner.nextLine();
-                Funcionario funcionario = new Funcionario(nome, telefone, cpf, cod, funcao);
-                System.out.println(funcionario.comprimentar(funcionario));
+                funcionario.setFuncao(scanner.nextLine());
                 return funcionario;
             }
             case "p" -> {
+                Professor professor = new Professor("", nome, telefone, cpf, "", "");
+                System.out.println("\n" + professor.Saudacao());
                 System.out.println("digite a matricula: ");
-                String mtr1P = scanner.nextLine();
+                professor.setMtr1(scanner.nextLine());
                 System.out.println("digite o curso: ");
-                String cursoP = scanner.nextLine();
+                professor.setCurso(scanner.nextLine());
                 System.out.println("digite o titulo: ");
-                String titulo = scanner.nextLine();
-                Professor professor = new Professor(mtr1P, nome, telefone, cpf, cursoP, titulo);
-                System.out.println(professor.comprimentar(professor));
+                professor.setTitulo(scanner.nextLine());
                 return professor;
             }
             case "r" -> {
                 Responsavel responsavel = new Responsavel(nome, telefone, cpf);
+                System.out.println("\n" + responsavel.Saudacao());
                 System.out.println("Quantos alunos este responsavel eh responsavel? ");
                 int numAlunos = Integer.parseInt(scanner.nextLine());
                 for (int i = 0; i < numAlunos; i++) {
@@ -73,7 +76,6 @@ public class Main {
                     String curso = scanner.nextLine();
                     Alunos aluno = new Alunos(mtr1, nomeAluno, telAluno, cpfAluno, curso);
                     responsavel.addAluno(aluno);
-                    System.out.println(responsavel.comprimentar(responsavel));
                 }
                 return responsavel;
             }
@@ -81,6 +83,5 @@ public class Main {
                 return null;
             }
         }
-        return null;
     }
 }

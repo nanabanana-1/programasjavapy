@@ -9,7 +9,9 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
-    public String oie();
+    public String Saudacao() {
+        return "Bem-vindo!";
+    }
 
     public String getNome() {
         return nome;
