@@ -9,6 +9,8 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
+    public String oie();
+
     public String getNome() {
         return nome;
     }
