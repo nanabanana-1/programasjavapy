@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
-class Responsavel extends Pessoa {
+public class Responsavel extends Pessoa {
 
-    private List<Alunos> alunos;
+    public List<Alunos> alunos;
 
     public Responsavel(String nome, String telefone, String cpf) {
         super(nome, telefone, cpf);
@@ -18,7 +18,7 @@ class Responsavel extends Pessoa {
         this.alunos.add(aluno);
     }
     
-    public String Saudacao() {
+    public String Saudacao1() {
         StringBuilder sb = new StringBuilder();
         sb.append("Oi, eu sou ").append(getNome()).append(" | meu telefone eh: ").append(getTelefone()).append(" | meu cpf eh: ").append(getCpf());
         if (!alunos.isEmpty()) {

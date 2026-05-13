@@ -1,5 +1,5 @@
-class Professor extends Alunos {
-    private String titulo;
+public class Professor extends Alunos {
+    public String titulo;
 
     public Professor(String mtr1, String nome, String telefone, String cpf, String curso, String titulo) {
         super(mtr1, nome, telefone, cpf, curso);

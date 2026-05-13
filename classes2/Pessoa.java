@@ -9,10 +9,6 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
-    public String Saudacao() {
-        return "Bem-vindo!";
-    }
-
     public String getNome() {
         return nome;
     }
@@ -37,6 +33,10 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
+    public String Saudacao() {
+        return "Bem-vindo!";
+    }
+
     public String comprimentar(Pessoa pessoa) {
         return " | registro pessoal | \n" + pessoa.getNome();
     }
@@ -54,7 +54,6 @@ public class Pessoa {
     }
 
     public String comprimentar(Responsavel responsavel) {
-        return "o responsavel chama : "+ responsavel.getNome() + "| seu telefone eh: " + responsavel.getTelefone() + "| seu cpf eh: " + responsavel.getCpf();
+        return "o responsavel chama : "+ responsavel.getNome() + "| seu telefone eh: " + responsavel.getTelefone() + "| seu cpf eh: " + responsavel.getCpf() + "| ele eh responsavel por " + responsavel.getAlunos().size() + " alunos.";
     }
  }
-

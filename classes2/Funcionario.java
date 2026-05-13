@@ -25,9 +25,4 @@ public class Funcionario extends Pessoa {
     public void setFuncao(String funcao) {
         this.funcao = funcao;
     }
-
-    @Override
-    public String Saudacao() {
-        return "Bem-vindo, funcionário!";
-    }
 }

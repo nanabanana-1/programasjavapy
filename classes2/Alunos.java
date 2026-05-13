@@ -23,9 +23,4 @@ public class Alunos extends Pessoa {
     public void setCurso(String curso) {
         this.curso = curso;
     }
-
-    @Override
-    public String Saudacao() {
-        return "Bem-vindo, aluno!";
-    }
 }
