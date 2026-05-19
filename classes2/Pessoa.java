@@ -8,7 +8,23 @@ public class Pessoa {
         this.telefone = telefone;
         this.cpf = cpf;
     }
+public class Pessoa {
+    private String nome;
+    private String telefone;
+    private String cpf;
 
+    protected void validar(String nome, String telefone, String cpf) throws DadoInvalidoException {
+        if (nome == null || nome.isBlank()) {
+            throw new DadoInvalidoException("Nome não pode ser vazio");
+        }
+        if (telefone == null || telefone.isBlank()) {
+            throw new DadoInvalidoException("Telefone não pode ser vazio");
+        }
+        if (cpf == null || !cpf.matches("\\d{11}")) {
+            throw new DadoInvalidoException("CPF deve ter 11 dígitos numéricos");
+        }
+    }
+    
     public String getNome() {
         return nome;
     }
