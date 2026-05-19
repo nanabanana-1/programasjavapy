@@ -3,16 +3,12 @@ public class Pessoa {
     private String telefone;
     private String cpf;
 
-    public Pessoa(String nome, String telefone, String cpf) {
-        this.nome = nome;
-        this.telefone = telefone;
-        this.cpf = cpf;
-    }
-public class Pessoa {
-    private String nome;
-    private String telefone;
-    private String cpf;
-
+    public Pessoa(String nome, String telefone, String cpf) throws DadoInvalidoException {
+    validar(nome, telefone, cpf);
+    this.nome = nome;
+    this.telefone = telefone;
+    this.cpf = cpf;
+}
     protected void validar(String nome, String telefone, String cpf) throws DadoInvalidoException {
         if (nome == null || nome.isBlank()) {
             throw new DadoInvalidoException("Nome não pode ser vazio");
