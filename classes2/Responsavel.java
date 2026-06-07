@@ -4,7 +4,7 @@ public class Responsavel extends Pessoa {
 
     public List<Alunos> alunos;
 
-    public Responsavel(String nome, String telefone, String cpf) {
+    public Responsavel(String nome, String telefone, String cpf) throws DadoInvalidoException {
         super(nome, telefone, cpf);
         this.alunos = new ArrayList<>();
     }

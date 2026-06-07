@@ -1,4 +1,6 @@
-class Gui implements InterfaceUser{
+import javax.swing.JOptionPane;
+
+class Gui implements InterfaceUsuario {
     public void mostrarMensagem(String mensagem, String titulo, boolean ehErro) {
         int tipo = ehErro ? JOptionPane.ERROR_MESSAGE : JOptionPane.INFORMATION_MESSAGE;
         JOptionPane.showMessageDialog(null, mensagem, titulo, tipo);
@@ -8,6 +10,10 @@ class Gui implements InterfaceUser{
     }
     public int pedirInteiro(String mensagem) {
         String resposta = JOptionPane.showInputDialog(mensagem);
-        return resposta == null ? -1 : Integer.parseInt(resposta);
+        try {
+            return resposta == null ? -1 : Integer.parseInt(resposta);
+        } catch (NumberFormatException e) {
+            return -1;
+        }
     }
 }

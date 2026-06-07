@@ -2,7 +2,7 @@ public class Funcionario extends Pessoa {
     private String cod;
     private String funcao;
 
-    public Funcionario(String nome, String telefone, String cpf, String cod, String funcao) {
+    public Funcionario(String nome, String telefone, String cpf, String cod, String funcao) throws DadoInvalidoException {
         super(nome, telefone, cpf);
         this.cod = cod;
         this.funcao = funcao;

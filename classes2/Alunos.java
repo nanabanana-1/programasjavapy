@@ -2,7 +2,7 @@ public class Alunos extends Pessoa {
     private String mtr1;
     private String curso;
 
-    public Alunos(String mtr1, String nome, String telefone, String cpf, String curso) {
+    public Alunos(String mtr1, String nome, String telefone, String cpf, String curso) throws DadoInvalidoException {
         super(nome, telefone, cpf);
         this.mtr1 = mtr1;
         this.curso = curso;

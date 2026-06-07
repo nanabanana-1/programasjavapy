@@ -1,4 +1,6 @@
-class Console implements InterfaceUser{
+import java.util.Scanner;
+
+class Console implements InterfaceUsuario {
     private final Scanner scanner = new Scanner(System.in);
 
     public void mostrarMensagem(String mensagem, String titulo, boolean ehErro) {
