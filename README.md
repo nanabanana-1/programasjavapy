@@ -42,6 +42,7 @@ java NomeDoArquivo
 
 ---
 
+
 ## Roadmap de Aprendizado
 
 | Tópico | Status | Descrição |
@@ -55,6 +56,7 @@ java NomeDoArquivo
 
 ---
 
+
 ## O que Encontrar
 
 Cada pasta contém:
@@ -63,5 +65,6 @@ Cada pasta contém:
 - Aplicação dos conceitos abordados em sala
 
 ---
+
 
 **Desenvolvido com amor(e um pouco de raiva) durante 2026 ☆ **
