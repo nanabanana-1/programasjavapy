@@ -42,7 +42,7 @@ java NomeDoArquivo
 
 ---
 
-## - Roadmap de Aprendizado
+## Roadmap de Aprendizado
 
 | Tópico | Status | Descrição |
 |--------|--------|-----------|
@@ -55,7 +55,7 @@ java NomeDoArquivo
 
 ---
 
-## - O que Encontrar
+## O que Encontrar
 
 Cada pasta contém:
 - Exercícios resolvidos
