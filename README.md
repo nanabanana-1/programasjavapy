@@ -67,4 +67,4 @@ Cada pasta contém:
 ---
 
 
-**Desenvolvido com amor(e um pouco de raiva) durante 2026 ☆ **
+**Desenvolvido com amor(e um pouco de raiva) durante 2026 ☆**
