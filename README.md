@@ -39,7 +39,7 @@ cd "entrada e saida"
 # Para Java
 javac NomeDoArquivo.java
 java NomeDoArquivo
-
+```
 ---
 
 
