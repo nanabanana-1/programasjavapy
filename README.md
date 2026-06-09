@@ -1,14 +1,14 @@
-# 📚 Programas Java e Python
+#  Program☆s Java 
 
-Repositório com atividades educacionais em Java e Python, desenvolvidas em 2026. Um compilado de exercícios e projetos práticos organizados por tópicos fundamentais da programação.
+Repositório com atividades educacionais em Java, desenvolvidas em 2026. Um compilado de exercícios e projetos práticos organizados por tópicos fundamentais da programação.
 
-## 🎯 Objetivo
+## - Objetivo
 
-Documentar meu progresso no aprendizado de **Java** e **Python**, consolidando conhecimentos através de atividades estruturadas em sala de aula.
+Documentar meu progresso no aprendizado de **Java**, consolidando conhecimentos através de atividades estruturadas em sala de aula.
 
 ---
 
-## 📂 Estrutura de Tópicos
+## - Estrutura de Tópicos
 
 ### ☕ Java
 
@@ -19,13 +19,9 @@ Documentar meu progresso no aprendizado de **Java** e **Python**, consolidando c
 - **🎯 Decisão** - Estruturas condicionais (if, else, switch) e Vetores
 - **⚙️ Funções** - Métodos e reutilização de código
 
-### 🐍 Python
-
-*(Adicionar estrutura conforme os tópicos desenvolvidos)*
-
 ---
 
-## 🚀 Como Usar
+## - Como Usar
 
 1. **Clone o repositório:**
 ```bash
@@ -44,26 +40,22 @@ cd "entrada e saida"
 javac NomeDoArquivo.java
 java NomeDoArquivo
 
-# Para Python
-python nome_do_arquivo.py
-```
-
 ---
 
-## 📊 Roadmap de Aprendizado
+## - Roadmap de Aprendizado
 
 | Tópico | Status | Descrição |
 |--------|--------|-----------|
 | Entrada e Saída | ✅ | Conceitos básicos de I/O |
-| Classes | ✅ | Primeiros passos em OOP |
-| Classes 2 | ✅ | Conceitos avançados de OOP |
+| Classes | ✅ | Primeiros passos em POO |
+| Classes 2 | ✅ | Conceitos avançados de POO |
 | Repetição | ✅ | Loops e iterações |
 | Decisão | ✅ | Estruturas condicionais e Vetores |
 | Funções | ✅ | Métodos e modularização |
 
 ---
 
-## 💡 O que Encontrar
+## - O que Encontrar
 
 Cada pasta contém:
 - Exercícios resolvidos
@@ -72,10 +64,4 @@ Cada pasta contém:
 
 ---
 
-## 📝 Licença
-
-[Defina uma licença - ex: MIT]
-
----
-
-**Desenvolvido com ❤️ durante 2026**
+**Desenvolvido com amor(e um pouco de raiva) durante 2026 ☆ **
