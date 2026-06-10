@@ -9,7 +9,7 @@ public class Pessoa {
     this.telefone = telefone;
     this.cpf = cpf;
 }
-    protected void validar(String nome, String telefone, String cpf) throws DadoInvalidoException {
+    private void validar(String nome, String telefone, String cpf) throws DadoInvalidoException {
         if (nome == null || nome.isBlank()) {
             throw new DadoInvalidoException("Nome não pode ser vazio");
         }

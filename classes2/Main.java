@@ -1,3 +1,5 @@
+import java.awt.GraphicsEnvironment;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class Main {
@@ -9,8 +11,8 @@ public class Main {
 
             ui.mostrarMensagem(" | registro pessoal |", "Sistema", false);
 
-            String nome = pedirTextoNaoVazio(ui, "Digite o nome:");
-            String telefone = pedirTextoNaoVazio(ui, "Digite o telefone:");
+            String nome = pedirNomeValido(ui, "Digite o nome:");
+            String telefone = pedirTelefoneValido(ui, "Digite o telefone:");
             String cpf = pedirCpfValido(ui, "Digite o cpf (11 dígitos):");
             String cargo = pedirCargoValido(ui);
 
@@ -24,6 +26,42 @@ public class Main {
         }
     }
 
+    private static String pedirModoExecucao() {
+        if (!GraphicsEnvironment.isHeadless()) {
+            while (true) {
+                String escolha = JOptionPane.showInputDialog(
+                        null,
+                        "Escolha o modo de execução:\n1 - Texto\n2 - GUI",
+                        "Modo de execução",
+                        JOptionPane.QUESTION_MESSAGE
+                );
+                if (escolha == null) {
+                    JOptionPane.showMessageDialog(null, "Por favor, escolha 1 ou 2.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    continue;
+                }
+                escolha = escolha.trim();
+                if ("1".equals(escolha) || "2".equals(escolha)) {
+                    return escolha;
+                }
+                JOptionPane.showMessageDialog(null, "Escolha inválida. Digite 1 ou 2.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (true) {
+                System.out.print("Escolha o modo de execução: 1 - Texto / 2 - GUI: ");
+                String escolha = scanner.nextLine();
+                if (escolha != null) {
+                    escolha = escolha.trim();
+                    if ("1".equals(escolha) || "2".equals(escolha)) {
+                        return escolha;
+                    }
+                }
+                System.out.println("Escolha inválida. Digite 1 para texto ou 2 para GUI.");
+            }
+        }
+    }
+
     private static String pedirTextoNaoVazio(InterfaceUsuario ui, String mensagem) {
         while (true) {
             String texto = ui.pedirTexto(mensagem);
@@ -31,6 +69,32 @@ public class Main {
                 return texto.trim();
             }
             ui.mostrarMensagem("Entrada inválida. Informe um valor não vazio.", "Erro", true);
+        }
+    }
+
+    private static String pedirNomeValido(InterfaceUsuario ui, String mensagem) {
+        while (true) {
+            String nome = ui.pedirTexto(mensagem);
+            if (nome != null) {
+                nome = nome.trim();
+                if (!nome.isBlank() && nome.matches(".*[A-Za-zÀ-ÿ].*") && !nome.matches(".*\\d.*")) {
+                    return nome;
+                }
+            }
+            ui.mostrarMensagem("Nome inválido. Digite um nome válido sem números.", "Erro", true);
+        }
+    }
+
+    private static String pedirTelefoneValido(InterfaceUsuario ui, String mensagem) {
+        while (true) {
+            String telefone = ui.pedirTexto(mensagem);
+            if (telefone != null) {
+                telefone = telefone.trim();
+                if (!telefone.isBlank() && telefone.matches("\\d+")) {
+                    return telefone;
+                }
+            }
+            ui.mostrarMensagem("Telefone inválido. Digite apenas números.", "Erro", true);
         }
     }
 
@@ -52,7 +116,7 @@ public class Main {
             String cargo = ui.pedirTexto("Você é aluno, funcionario, responsavel ou professor?\nResponda com > a / f / r / p:");
             if (cargo != null) {
                 cargo = cargo.trim().toLowerCase();
-                if (cargo.equals("a") || cargo.equals("f") || cargo.equals("r") || cargo.equals("p")) {
+                if (cargo.matches("[afrp]")) {
                     return cargo;
                 }
             }
@@ -104,8 +168,8 @@ public class Main {
                 for (int i = 0; i < numAlunos; i++) {
                     ui.mostrarMensagem("Dados do aluno " + (i + 1) + ":", "Cadastro", false);
 
-                    String nomeAluno = pedirTextoNaoVazio(ui, "Nome do aluno " + (i + 1) + ":");
-                    String telAluno = pedirTextoNaoVazio(ui, "Telefone do aluno " + (i + 1) + ":");
+                    String nomeAluno = pedirNomeValido(ui, "Nome do aluno " + (i + 1) + ":");
+                    String telAluno = pedirTelefoneValido(ui, "Telefone do aluno " + (i + 1) + ":");
                     String cpfAluno = pedirCpfValido(ui, "CPF do aluno " + (i + 1) + " (11 dígitos):");
                     String mtr1 = pedirTextoNaoVazio(ui, "Matrícula do aluno " + (i + 1) + ":");
                     String curso = pedirTextoNaoVazio(ui, "Curso do aluno " + (i + 1) + ":");
@@ -119,3 +183,4 @@ public class Main {
             default -> throw new IllegalStateException("Cargo inesperado: " + cargo);
         }
     }
+}
